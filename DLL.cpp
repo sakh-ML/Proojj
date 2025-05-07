@@ -1,9 +1,15 @@
 #include <iostream>
 
-class Node{};
+class Node{
+	Node* left = NULL;
+	int value;
+	Node* right = NULL;
+};
 
 
-class DLL{};
+class DLL{
+
+};
 
 
 int main(){
