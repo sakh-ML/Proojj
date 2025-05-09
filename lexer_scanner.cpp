@@ -1,25 +1,45 @@
 #include <iostream>
-#include <string>
+#include <unordered_set>
 
-// int x = 5; 5 + 7 ---->
-enum TokenType{
-	INT,
-	IDENTIFIER,
-	ASSIGN,
-	SEMICOLON,
-	PLUS
-};
+bool is_whitesapce(char c){
+	if(c == '\n' || c == '\t' || c == '\r' || c == ' '){
+		return true;
+	}
+	return false;
+}
 
-struct Token{
-	TokenType type;
-	std::string value_of_token;
-};
+std::unordered_set<std::string> operators = {"+", "-", "*", "/", "%","<", ">", "<=", ">=", "!=", "=="};
 
-class Scanner{};
+bool is_operator(char c){
+	std::string str(1,c);
+	if(operators.count(str) > 0){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 
-int main(){ 
 
-std::cout << "Hello" << std::endl;
+
+// i have to build the enum and the token class
+
+
+//make all the helper functions !! that check if somethign somethign is !!.
+
+
+
+
+// then i have to make the heleor function that scann if somethign really something else like by iterare from start to end
+
+
+
+// i have to make the class scanner than the last function
+
+
+int main(){
+
+	std::cout << "Hello" << std::endl;
 
 	return 0;
 }
