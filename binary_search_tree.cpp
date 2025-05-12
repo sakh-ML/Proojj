@@ -133,4 +133,6 @@ int main() {
     printf("%s,", s.c_str());
   }
   printf("\n");
+
+  return 0;
 }

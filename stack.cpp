@@ -36,4 +36,5 @@ int main() {
     std::string s = webseiten.pop();
     printf("%s\n", s.c_str());
   }
+  return 0;
 }
