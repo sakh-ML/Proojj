@@ -1,1 +1,8 @@
-sdasd asd asd asd asd:sdasd asd asd asd asd:
+#include <iostream>
+
+int main(){
+
+std::cout << "Hello momen !!" << std::endl;
+
+	return 0;
+}
