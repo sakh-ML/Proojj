@@ -7,8 +7,9 @@ for _ in range(1000):
     asm += '"div %%r8;"\n'
     for _ in range(5):
         for register in range(9, 16):
-            # CHANGE CODE HERE
-            src_register = ''
+            
+            src_register = '%%rdx'; # inorder
+            #src_register == '%%r8'; // out of order
             asm += f'"add %%r{register}, {src_register};"' + '\n'
 
 program = rf"""#define REPS 1000000UL
