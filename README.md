@@ -13,10 +13,17 @@
 ├── ⚡ Parallel/
 │   ├── 🖥️ OpenMP (multi-threaded)
 │   └── 🎮 OpenCL (GPU accelerated)
+├── 🖥️ HAPRA/
+│   ├── Basic Logic Gates (AND/OR/NAND/NOR)
+│   ├── Advanced Components/
+│   │   ├── Multiplexers
+│   │   ├── Carry-Lookahead Adders
+│   │   ├── Arithmetic Logic Units
+│   │   └── Clock Divider Circuits
+│   └── 🏗️ MIPS Processor (Pipelined Implementation)
 └── 🛠️ Utilities/
     ├── ⏰ DigitalClock.py
     └── 📂 FileOrginaizer.py
-
 
 ## 🚀 GET STARTED
 ```bash
