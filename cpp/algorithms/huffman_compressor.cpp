@@ -22,7 +22,6 @@ using std::bitset;
 * Die Datei "wordlist-german.txt" wird mit Huffman-Kompression auf "wordlist-german.hfm" komprimiert
 * und anschließend in "test.txt" dekomprimiert.
 *
-* Dateiname: huffman_compressor.cpp
 */
 
 struct Code {
