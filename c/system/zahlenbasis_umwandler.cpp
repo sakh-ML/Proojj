@@ -1,7 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
-
 /*
 * Projekt: Zahlenbasis-Umwandler
 * Beschreibung:
@@ -20,6 +16,9 @@
 */
 
 
+#include <iostream>
+#include <vector>
+#include <cmath>
 
 void print_vector(std::vector<int> v){
     for(int n : v){

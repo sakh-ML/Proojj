@@ -1,13 +1,15 @@
-#include <math.h>
-#include <stdio.h>
-#include <omp.h>
-#include "myFunction.h"
-
 /*
 Dieses Programm demonstriert die Verwendung von OpenMP zur parallelen Berechnung.
 Es füllt ein großes Array mit Werten, die durch die Funktion myFunc berechnet werden.
 Anschließend wird die benötigte Zeit für die Berechnung gemessen und ausgegeben.
 */
+
+
+#include <math.h>
+#include <stdio.h>
+#include <omp.h>
+#include "myFunction.h"
+
 
 int main() {
 

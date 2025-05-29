@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <omp.h>
-
-
 /*
 Dieses Programm demonstriert die Nutzung von OpenMP zur parallelen Ausführung.
 Es erstellt 100 Threads, die gleichzeitig laufen und ihre jeweilige Thread-ID
@@ -11,6 +6,10 @@ Ziel ist es, die Basisfunktionen von OpenMP und das parallele Ausführen von Cod
 zu zeigen.
 */
 
+
+#include <stdio.h>
+#include <unistd.h>
+#include <omp.h>
 
 int main(){
 #pragma omp parallel num_threads(100)
