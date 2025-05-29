@@ -1,3 +1,17 @@
+/*
+* Dieses Programm implementiert eine einfache One-Time-Pad (OTP) Verschlüsselung und Entschlüsselung.
+* Es liest eine Textdatei ein, erzeugt einen zufälligen Schlüssel mit Großbuchstaben,
+* verschlüsselt den Inhalt der Datei zeichenweise und speichert sowohl den verschlüsselten Text
+* als auch den Schlüssel in neuen Dateien ab.
+* 
+* Die Entschlüsselung funktioniert analog: sie nimmt den verschlüsselten Text und den Schlüssel,
+* wendet die Umkehrung der Verschlüsselung an und speichert das Ergebnis in einer Ausgabedatei.
+* 
+* Der Fokus liegt auf Zeichen- und Dateioperationen, sowie auf der Anwendung von modularer Arithmetik
+* für die Verschlüsselung. Verzeichnisse und Dateien werden bei Bedarf automatisch erstellt.
+*/
+
+
 #include <iostream>
 #include <cmath>
 #include <fstream>
