@@ -26,7 +26,7 @@ cd programmingproject/Proojj
 
 📬 CONNECT
 
-✉️ Email: mohamad.abusaleh0.com
+✉️ Email: mohamad.abusaleh0@gmail.com
 🔗 LinkedIn: Mohammad abu saleh
 💬 Discord: xxxxxxx
 
