@@ -27,7 +27,7 @@ cd programmingproject/Proojj
 
 ✉️ Email: mohamad.abusaleh0@gmail.com
 🔗 LinkedIn: Mohammad abu saleh
-💬 Discord: xxxxxxx
+💬 Discord: xxxxxx
 
 "First solve the problem. Then write the code." - John Johnson
 
