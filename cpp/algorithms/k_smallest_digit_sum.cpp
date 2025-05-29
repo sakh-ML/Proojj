@@ -1,6 +1,20 @@
 #include <cstdio>
-
 #include "PQ.hpp"
+
+/*
+Dieses Programm implementiert eine Prioritätswarteschlange (PQ) mit einer
+benutzerdefinierten Vergleichsfunktion, die die Quersumme (Digitensumme)
+von Zahlen vergleicht.
+
+Teil 1: Die Klasse DigitSumLess definiert einen Vergleichsoperator,
+der zwei Zahlen nach ihrer Quersumme vergleicht.
+
+Teil 2: Die Funktion k_smallest sucht das k-kleinste Element im Array,
+basierend auf der Quersumme als Ordnungsmaß.
+
+Das Programm demonstriert die Funktionalität mit Beispielzahlen und
+gibt die k-kleinsten Elemente gemäß Quersumme aus.
+*/
 
 int digit_sum(int number) {
   int sum = 0;

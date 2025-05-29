@@ -1,6 +1,7 @@
 #include <cstdio>
 
-// gibt die #Zeilen einer Datei zurück:
+//Diese Funktion berechnet die Anzahl von Zeilen in einer Datei
+
 int count_lines(FILE* file) {
   rewind(file);  // gehe zurück zum Anfang der Datei
   int lines = 0;
