@@ -1,3 +1,10 @@
+/*
+* Klasse Student: Speichert Name, Noten und Matrikelnummer.
+* Unterstützt Konstruktoren, Copy-Konstruktor, Zuweisung und Destruktor.
+* Verwaltet dynamischen Speicher für Name und Noten.
+*/
+
+
 #include <cstdio>
 
 class Student {
