@@ -1,8 +1,21 @@
+/*
+* Generischer Binary Search Tree (BST):
+* Implementiert einen binären Suchbaum für beliebige, vergleichbare Datentypen (z. B. int, string, double).
+* Unterstützt Operationen wie Einfügen, Suchen, Höhe berechnen und Traversierungen (Inorder/Preorder).
+*
+* Im Beispielprogramm (main) wird der BST mit Strings verwendet:
+* - Wörter mit genau 3 Buchstaben werden aus einer Datei eingelesen.
+* - Diese werden in den BST eingefügt.
+* - Anschließend werden die Anzahl, die Höhe und die sortierte Liste der Wörter ausgegeben.
+*/
+
+
 #include <cstdio>
 #include <fstream>
 #include <string>  // aka MyString
 #include <vector>  // aka ResizableArray
 using namespace std;
+
 
 template <class T>
 struct BSTNode {  // struct = class, nur per default alles public

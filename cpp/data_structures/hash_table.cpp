@@ -1,3 +1,8 @@
+/*
+Dieser Code implementiert eine generische Hashtabelle mit linearem Sondieren, 
+die es erlaubt, Zahlen oder Strings effizient zu speichern und wiederzufinden.
+*/
+
 #include <cassert>
 #include <fstream>
 #include <random>

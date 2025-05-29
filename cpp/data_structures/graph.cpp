@@ -1,7 +1,18 @@
+/*
+* Undirektionaler Graph mit DFS und BFS:
+* - Jeder Knoten ist mit Namen (Label) und Nummer versehen.
+* - Der Graph speichert alle Nachbarn eines Knotens über Adjazenzlisten.
+* - Es gibt rekursive und iterative Tiefensuche (DFS) sowie zwei Varianten der Breitensuche (BFS).
+*
+* Beispiel: VRR-Verbindungen zwischen Städten werden modelliert.
+* bfs_iter2() wird aufgerufen, um die Stationen in BFS-Reihenfolge zu besuchen.
+*/
+
 #include <queue>
 #include <stack>
 #include <string>
 #include <vector>
+
 
 class GraphNode {
  public:

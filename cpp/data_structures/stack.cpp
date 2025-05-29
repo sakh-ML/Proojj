@@ -1,3 +1,9 @@
+/* 
+Implementiert einen generischen Stack mit dynamischem Array.
+Unterstützt push, pop, top und prüft, ob der Stack leer ist.
+Beispiel: Webseiten-Stack mit Ausgaben in umgekehrter Reihenfolge.
+*/
+
 #include <cstdio>
 #include <string>
 
