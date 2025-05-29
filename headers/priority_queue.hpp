@@ -1,3 +1,12 @@
+/*
+* Implementiert eine generische Prioritätswarteschlange (Heap) mit
+* anpassbarem Vergleich. Unterstützt die Operationen push und extract_min
+* mittels sift-up und sift-down. Intern wird ein Heap als 1-basiertes
+* Array verwendet. Der Vergleichsoperator ist standardmäßig std::less<T>
+* für eine Min-Heap-Implementierung.
+*/
+
+
 #include <functional>
 
 template <typename T, typename CmpT = std::less<T>>

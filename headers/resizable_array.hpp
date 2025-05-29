@@ -1,3 +1,10 @@
+/*
+Template-Klasse für ein dynamisch vergrößerbares Array.
+Unterstützt Hinzufügen, Entfernen, Kopieren und Indexzugriff.
+Kapazität passt sich automatisch an die Anzahl der Elemente an.
+*/
+
+
 #include <cstdio>
 
 // todo: cpy & assgn

@@ -1,3 +1,12 @@
+/*
+* Implementiert eine generische Prioritätswarteschlange (Heap) mit einem
+* Vergleichsobjekt (Comparator). Unterstützt Einfügen (push),
+* Entfernen des minimalen Elements (extract_min), sowie Abfragen
+* von Größe und Leere. Die Heap-Eigenschaft wird über sift_up und sift_down
+* gewahrt.
+*/
+
+
 #ifndef HEAP_HPP
 #define HEAP_HPP
 

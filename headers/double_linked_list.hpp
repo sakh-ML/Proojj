@@ -1,3 +1,11 @@
+/*
+* Implementiert eine generische doppelt verkettete Liste mit
+* grundlegenden Operationen wie Einfügen vorne/hinten, Löschen,
+* Suchen, Einfügen nach einem bestimmten Knoten und Zugriff per Index.
+* Enthält außerdem Copy-Konstruktor und Zuweisungsoperator zur sicheren
+* Kopie der Liste.
+*/
+
 template <typename U>
 class DLLNode {
  public:

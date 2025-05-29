@@ -1,3 +1,13 @@
+/*
+* Definiert eine Funktion myFunc, die für einen gegebenen ganzzahligen
+* Eingabewert verschiedene mathematische Operationen (Sinus, Kosinus,
+* Potenz, Logarithmus, Quadratwurzel) kombiniert und das Ergebnis als
+* double zurückgibt.
+* 
+* Hinweis: Die Funktion nimmt i modulo 360, um Winkel in Grad zu behandeln.
+*/
+
+
 #ifndef MYFUNC_H
 #define MYFUNC_H
 
