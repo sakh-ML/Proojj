@@ -3,21 +3,21 @@
 #include <cmath>
 
 /*
- * Projekt: Zahlenbasis-Umwandler
- * Beschreibung:
- * Dieses Programm kann Zahlen von einer Basis (z. B. Dezimal) in eine andere Basis (z. B. Binär) umwandeln.
- *
- * Funktionen:
- * - Eigene Potenz-Funktion (für z. B. 2⁵).
- * - Umwandlung von Zahlen in Ziffern-Arrays und zurück.
- * - Umwandlung:
- *     - von Basis-n nach Dezimal (z. B. Binär → Dezimal)
- *     - von Dezimal nach Basis-n (z. B. Dezimal → Binär)
- *     - direkt von Basis-n nach Basis-n
- *
- * Beispiel:
- * Die Zahl 325 in Basis 10 wird in Basis 2 umgewandelt (Ergebnis: 101000101).
- */
+* Projekt: Zahlenbasis-Umwandler
+* Beschreibung:
+* Dieses Programm kann Zahlen von einer Basis (z. B. Dezimal) in eine andere Basis (z. B. Binär) umwandeln.
+*
+* Funktionen:
+* - Eigene Potenz-Funktion (für z. B. 2⁵).
+* - Umwandlung von Zahlen in Ziffern-Arrays und zurück.
+* - Umwandlung:
+*     - von Basis-n nach Dezimal (z. B. Binär → Dezimal)
+*     - von Dezimal nach Basis-n (z. B. Dezimal → Binär)
+*     - direkt von Basis-n nach Basis-n
+*
+* Beispiel:
+* Die Zahl 325 in Basis 10 wird in Basis 2 umgewandelt (Ergebnis: 101000101).
+*/
 
 
 
