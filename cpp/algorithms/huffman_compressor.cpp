@@ -21,7 +21,6 @@ using std::bitset;
 * Beispiel:
 * Die Datei "wordlist-german.txt" wird mit Huffman-Kompression auf "wordlist-german.hfm" komprimiert
 * und anschließend in "test.txt" dekomprimiert.
-*
 */
 
 struct Code {
