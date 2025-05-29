@@ -1,3 +1,8 @@
+/*
+* Einfacher Thread-sicherer Speicher-Allocator mit malloc, free, calloc, realloc.
+* Verwendet sbrk() und eine verkettete Liste von Blöcken.
+*/
+
 #include <unistd.h>
 #include <string.h>
 #include <pthread.h>

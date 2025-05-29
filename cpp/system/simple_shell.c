@@ -1,3 +1,9 @@
+/*
+Einfache Kommandozeilen-Shell (LSH), die Benutzerbefehle liest,
+diese in Argumente aufteilt und ausführt. Unterstützt interne Befehle
+wie cd, help, exit und startet externe Programme mit fork und execvp.
+*/
+
 
 #include <unistd.h>
 #include <string.h>

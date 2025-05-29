@@ -1,3 +1,11 @@
+/* 
+Dieses Programm demonstriert die parallele Ausführung von vier Threads
+mit POSIX-Threads (pthread). Jeder Thread führt eine eigene Funktion aus,
+die eine Anzahl von Iterationen durchläuft und dabei Ausgaben macht.
+Das Programm zeigt grundlegendes Erstellen, Starten und Warten auf Threads.
+*/
+
+
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
@@ -27,7 +35,7 @@ void* func3(void* arg) {
 void* func4(void* arg) {
   for(int i = 0; i < 100; i++) {
     printf("I'm func4, currently at iteration %d\n", i);
-  }
+}
   return NULL;
 }
 

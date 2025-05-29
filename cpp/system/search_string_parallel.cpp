@@ -1,8 +1,15 @@
-#include <omp.h>
+/* 
+Dieses Programm generiert einen sehr großen Zufallstext (1 GB) und sucht 
+darin nach einem bestimmten Suchmuster (hier "abcd"). 
+Es gibt zwei Suchfunktionen: eine serielle und eine parallele mit OpenMP.
+Ziel ist, die Leistung der parallelen Suche mit mehreren Threads zu messen.
+*/
 
+#include <omp.h>
 #include <iostream>
 #include <string>
 using namespace std;
+
 
 #define STRING_LENGTH (1024UL * 1024UL * 1024UL * 1UL)  // 1GB
 #define SEARCH_PATTERN_LENGTH 4
