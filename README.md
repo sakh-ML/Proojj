@@ -2,21 +2,22 @@
 ![GitHub Stars](https://img.shields.io/badge/Projects-30+-brightgreen) ![Languages](https://img.shields.io/badge/Python-C%2B%2B-C%20OpenMP%20OpenCL-red) ![License](https://img.shields.io/badge/License-MIT-blue)
 
 ## 🗂️ PROJECT SHOWCASE
-
+```text
 📦 Proojj/
 ├── 🧮 Algorithms/
-│ ├── 🔢 Math (heron_sqrt.cpp, check_prime.cpp)
-│ ├── 📊 Sorting (4 merge/selection sorts)
-│ └── 🔐 Crypto (OneTimePad)
+│   ├── 🔢 Math (heron_sqrt.cpp, check_prime.cpp)
+│   ├── 📊 Sorting (4 merge/selection sorts)
+│   └── 🔐 Crypto (OneTimePad)
 ├── 🧬 Data Structures/
-│ ├── 🌳 Trees (BST, heap)
-│ └── 🕸️ Graphs (DFS/BFS)
+│   ├── 🌳 Trees (BST, heap)
+│   └── 🕸️ Graphs (DFS/BFS)
 ├── ⚡ Parallel/
-│ ├── 🖥️ OpenMP (multi-threaded)
-│ └── 🎮 OpenCL (GPU accelerated)
+│   ├── 🖥️ OpenMP (multi-threaded)
+│   └── 🎮 OpenCL (GPU accelerated)
 └── 🛠️ Utilities/
-├── ⏰ DigitalClock.py
-└── 📂 FileOrginaizer.py
+    ├── ⏰ DigitalClock.py
+    └── 📂 FileOrginaizer.py
+
 
 ## 🚀 GET STARTED
 ```bash
