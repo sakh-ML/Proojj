@@ -1,6 +1,20 @@
 #include <cstdio>
 
-// gib die Wurzel von x zurück (Heron-Verfahren):
+/*
+* Projekt: Quadratwurzelberechnung mit Heron-Verfahren
+* Beschreibung:
+* Dieses Programm berechnet die Quadratwurzel einer gegebenen Zahl
+* mittels des Heron-Verfahrens (auch bekannt als Babylonisches Verfahren).
+*
+* Funktionsweise:
+* - Startwerte a = x und b = 1.
+* - Iterative Annäherung an die Quadratwurzel durch Mittelwertbildung von a und b.
+* - Abbruch nach maximal 100 Iterationen oder wenn die Genauigkeit von 0.00001 erreicht ist.
+*
+* Beispiel:
+* Für x = 23194514 gibt das Programm die approximative Quadratwurzel aus.
+*/
+
 float heron(float x) {
   float a = x;
   float b = 1;
