@@ -1,5 +1,4 @@
 # 🔥 MLABUSALEHML Ultimate Code Collection
-![GitHub Stars](https://img.shields.io/badge/Projects-30+-brightgreen) ![Languages](https://img.shields.io/badge/Python-C%2B%2B-C%20OpenMP%20OpenCL-red) ![License](https://img.shields.io/badge/License-MIT-blue)
 
 ## 🗂️ PROJECT SHOWCASE
 ```text
