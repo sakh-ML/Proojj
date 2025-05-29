@@ -1,5 +1,15 @@
 #include <cstdio>
 
+/*
+* Dieses Programm implementiert eine Klasse für rationale Zahlen (Brüche).
+* Es erlaubt Addition, Subtraktion, Multiplikation und Division von rationalen Zahlen.
+* Intern werden Brüche automatisch gekürzt.
+* Außerdem kann man den Bruch in eine Fließkommazahl umwandeln (to_float)
+* und den Kehrwert berechnen (invert).
+* Der Zugriff auf Zähler und Nenner ist gekapselt (private),
+* daher können sie von außen nicht direkt verändert werden.
+*/
+
 int gcd(int a, int b) {
   while (b != a) {
     if (a < b)
