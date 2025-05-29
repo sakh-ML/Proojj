@@ -1,6 +1,3 @@
-#include <cstdio>
-#include "PQ.hpp"
-
 /*
 Dieses Programm implementiert eine Prioritätswarteschlange (PQ) mit einer
 benutzerdefinierten Vergleichsfunktion, die die Quersumme (Digitensumme)
@@ -15,6 +12,10 @@ basierend auf der Quersumme als Ordnungsmaß.
 Das Programm demonstriert die Funktionalität mit Beispielzahlen und
 gibt die k-kleinsten Elemente gemäß Quersumme aus.
 */
+
+
+#include <cstdio>
+#include "PQ.hpp"
 
 int digit_sum(int number) {
   int sum = 0;

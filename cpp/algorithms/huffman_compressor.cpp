@@ -1,8 +1,3 @@
-#include <bitset>
-#include <cstdio>
-using std::bitset;
-#include "heap.hpp"
-
 /*
 * Projekt: Huffman-Komprimierung & Dekomprimierung
 * Beschreibung:
@@ -22,6 +17,13 @@ using std::bitset;
 * Die Datei "wordlist-german.txt" wird mit Huffman-Kompression auf "wordlist-german.hfm" komprimiert
 * und anschließend in "test.txt" dekomprimiert.
 */
+
+
+#include <bitset>
+#include <cstdio>
+using std::bitset;
+#include "heap.hpp"
+
 
 struct Code {
   Code(int l = 0, bitset<64> c = {}) : length_{l}, code_{c} {}

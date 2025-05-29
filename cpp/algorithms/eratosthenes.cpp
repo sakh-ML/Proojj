@@ -1,6 +1,3 @@
-#include <cassert>
-#include <cstdio>
-
 /*
 Dieses Programm implementiert den "Sieb des Eratosthenes" Algorithmus,
 um alle Primzahlen kleiner als eine eingegebene Zahl n auszugeben.
@@ -11,6 +8,8 @@ welche Zahlen Primzahlen sind, und filtert die Vielfachen systematisch heraus.
 Am Ende werden alle gefundenen Primzahlen ausgegeben.
 */
 
+#include <cassert>
+#include <cstdio>
 
 // print all primes less than n:
 void print_all_primes(int n) {

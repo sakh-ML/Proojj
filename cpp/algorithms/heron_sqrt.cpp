@@ -1,5 +1,3 @@
-#include <cstdio>
-
 /*
 * Projekt: Quadratwurzelberechnung mit Heron-Verfahren
 * Beschreibung:
@@ -14,6 +12,9 @@
 * Beispiel:
 * Für x = 23194514 gibt das Programm die approximative Quadratwurzel aus.
 */
+
+
+#include <cstdio>
 
 float heron(float x) {
   float a = x;

@@ -1,6 +1,3 @@
-#include <cstdio>
-#include <iostream>
-
 /*
 * Projekt: Primzahl-Prüfer
 * Beschreibung:
@@ -12,6 +9,9 @@
 *   ob die Zahl durch einen dieser Teiler teilbar ist.
 * Am Ende wird dem Benutzer angezeigt, ob es sich um eine Primzahl handelt oder nicht.
 */
+
+#include <cstdio>
+#include <iostream>
 
 bool is_prime(int x) {
 

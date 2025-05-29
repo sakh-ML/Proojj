@@ -1,5 +1,3 @@
-#include <cstdio>
-
 /*
 * Dieses Programm implementiert eine Klasse für rationale Zahlen (Brüche).
 * Es erlaubt Addition, Subtraktion, Multiplikation und Division von rationalen Zahlen.
@@ -9,6 +7,10 @@
 * Der Zugriff auf Zähler und Nenner ist gekapselt (private),
 * daher können sie von außen nicht direkt verändert werden.
 */
+
+
+#include <cstdio>
+
 
 int gcd(int a, int b) {
   while (b != a) {

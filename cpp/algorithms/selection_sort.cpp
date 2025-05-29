@@ -1,12 +1,12 @@
 /*
- * Dieses Programm sortiert ein Array von Zahlen mit dem Selection-Sort-Verfahren
- * und sucht anschließend mit der binären Suche (Binary Search), ob ein bestimmter Wert vorhanden ist.
- *
- * Funktionen:
- * - sort(): sortiert ein Array aufsteigend durch Auswahl (Selection Sort)
- * - find_faster(): sucht effizient einen Wert in einem aufsteigend sortierten Array
- * - print_all(): gibt alle Werte im Array aus
- */
+* Dieses Programm sortiert ein Array von Zahlen mit dem Selection-Sort-Verfahren
+* und sucht anschließend mit der binären Suche (Binary Search), ob ein bestimmter Wert vorhanden ist.
+*
+* Funktionen:
+* - sort(): sortiert ein Array aufsteigend durch Auswahl (Selection Sort)
+* - find_faster(): sucht effizient einen Wert in einem aufsteigend sortierten Array
+* - print_all(): gibt alle Werte im Array aus
+*/
 
 #include <cstdio>
 
