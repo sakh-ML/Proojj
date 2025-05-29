@@ -16,7 +16,7 @@ bool is_prime(int x) {
 	}
 
 	int i = 3;
-	while(i * i < x){
+	while(i * i <= x){
 		if(x % i == 0){
 			return false;
 		}
