@@ -1,23 +1,43 @@
 #include <cstdio>
+#include <iostream>
 
-// gib die Wurzel von x zurück (Heron-Verfahren):
-float heron(float x) {
-  float a = x;
-  float b = 1;
+bool is_prime(int x) {
 
-  // setze wiederholend a auf das arithmetische Mittel von a und b
-  // (und b so, dass a*b=x bleibt) -- maximal 100 Wiederholungen und
-  // bis die Genauigkeit von .00001 erreicht ist:
-  int zaehler = 0;  // Zaehler fuer die #Wiederholungen
-  while ((a - b) > .00001 && zaehler < 100) {
-    a = (a + b) / 2;  // arithmetische Mittel
-    b = x / a;        // setze b so, dass a*x==b bleibt
-    ++zaehler;
-  }
-  return a;
+	if(x < 2){
+		return false;
+	}
+
+	if(x == 2){
+		return true;
+	}
+
+	if(x % 2 == 0){
+		return false;
+	}
+
+	int i = 3;
+	while(i * i < x){
+		if(x % i == 0){
+			return false;
+		}
+		else{
+			i += 2;
+		}
+	}
+
+	return true;
 }
 
 int main() {
-  float x = 23194514;
-  printf("Die Quadratwurzel von %f ist %f\n", x, heron(x));
+		
+	int x;
+	std::cout << "Enter a number, u want to check if it is a prime :" << std::endl;
+	std::cin >> x;
+	if(is_prime(x) == true){
+		std::cout << x << " is a prime number !!" << std::endl;
+	}
+
+	else{
+		std::cout << x << " it is not a prime mumber !!" << std::endl;
+	}
 }
