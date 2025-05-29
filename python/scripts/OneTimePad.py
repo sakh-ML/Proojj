@@ -1,6 +1,11 @@
+"""
+Dieses Programm verschlüsselt den Inhalt einer Textdatei mittels einer einfachen XOR-Verschlüsselung
+mit einem zufällig generierten Schlüssel. Dabei wird für jeden Buchstaben im Originaltext ein zufälliges
+Zeichen als Schlüssel erzeugt und zur Verschlüsselung verwendet. Der verschlüsselte Text und der Schlüssel
+werden jeweils in separaten Dateien gespeichert. Die Entschlüsselungsfunktion ist noch nicht implementiert.
+"""
+
 import os, random, string
-
-
 
 def encrypte_message() -> None:
     

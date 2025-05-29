@@ -1,6 +1,10 @@
-#####TODO#####
-#Zahlen Konventer!!!#
-
+'''
+Dieses Programm ist ein universeller Zahlenkonverter, der Zahlen zwischen verschiedenen Zahlensystemen (Basen) umwandeln kann. 
+Es unterstützt Basen von mindestens 2 bis 16 und berücksichtigt dabei auch hexadezimale Ziffern (A-F).
+Der Benutzer kann wählen, ob er von Dezimal (Basis 10) in eine andere Basis, von einer beliebigen Basis in Dezimal oder 
+zwischen zwei beliebigen Basen konvertieren möchte.
+Das Programm prüft die Gültigkeit der eingegebenen Zahlen in Bezug auf die jeweilige Basis und gibt entsprechende Fehlermeldungen aus.
+'''
 
 def check_basis_with_number(number, basis) -> bool:
     hexa_dezimal_numbers = {

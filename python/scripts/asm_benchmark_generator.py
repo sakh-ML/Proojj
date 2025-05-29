@@ -1,3 +1,12 @@
+'''
+Dieses Python-Skript generiert automatisch C-Code, der Inline-Assembly-Code enthält.
+Der generierte C-Code führt in einer Schleife eine Million Wiederholungen aus, 
+in denen eine Sequenz von Assembly-Befehlen ausgeführt wird.
+Diese Befehle beinhalten Divisionen und Additionen zwischen verschiedenen CPU-Registern,
+um z.B. CPU-Leistung oder bestimmte Instruktionspfade zu benchmarken.
+'''
+
+
 asm = r'''"mov $0xFFFFFFFFFFFFFFFF, %%rax;"
 "mov $0xFFFFFFFFFFFFFFFE, %%r8;"
 "xor %%rdx, %%rdx;"

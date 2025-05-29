@@ -1,3 +1,11 @@
+"""
+Dieses Programm organisiert Dateien in einem angegebenen Verzeichnis,
+indem es sie basierend auf ihrer Dateiendung in vordefinierte Ordner verschiebt.
+Unterstützte Dateitypen sind z.B. Bilder, Dokumente, Videos und ZIP-Dateien.
+Dateien, die keiner Kategorie zugeordnet werden, landen im Ordner 'Others'.
+"""
+
+
 import os
 import shutil
 

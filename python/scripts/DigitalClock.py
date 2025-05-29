@@ -1,6 +1,10 @@
-####TODO####
-# Digital Clock #
-# Abu Saleh #
+"""
+Dieses Programm implementiert eine digitale Uhr mit Tkinter.
+Es zeigt die aktuelle Uhrzeit im Format Stunden:Minuten:Sekunden
+an und aktualisiert diese alle 200 Millisekunden.
+Die Benutzeroberfläche besteht aus einem Label mit konfigurierbarer
+Schriftart, Hintergrund- und Vordergrundfarbe.
+"""
 
 from tkinter import Label, Tk
 import time

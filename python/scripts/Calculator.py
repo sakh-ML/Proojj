@@ -1,3 +1,13 @@
+"""
+Dieses Programm implementiert einen einfachen grafischen Taschenrechner
+mit Tkinter. Es erlaubt die Eingabe von Zahlen und Operatoren, speichert
+die Berechnung als String und zeigt das Ergebnis an. Unterstützt die
+Grundrechenarten (+, -, *, /) und behandelt Fehler bei ungültigen Eingaben.
+Die Benutzeroberfläche besteht aus Buttons für Zahlen, Operatoren, Löschen
+und Auswerten, gestaltet für eine einfache Bedienung.
+"""
+
+
 import tkinter as tk
 
 # Global variable to store the current calculation

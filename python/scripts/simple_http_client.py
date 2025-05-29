@@ -1,3 +1,10 @@
+'''
+Dieses Programm stellt eine einfache TCP-Verbindung zu www.google.com auf Port 80 her,
+sendet eine HTTP-GET-Anfrage, um die Startseite abzurufen,
+und gibt die empfangene HTTP-Antwort als Text auf der Konsole aus.
+Es demonstriert die Grundlagen der Socket-Programmierung in Python.
+'''
+
 import socket
 
 HOST = 'www.google.com'  

@@ -1,6 +1,10 @@
-####TODO####
-#ROCK , PAPIER, SCISSORS GAME#
-# Abu Saleh #
+"""
+Dieses Programm implementiert das Spiel „Schere, Stein, Papier“ (Rock, Paper, Scissors) gegen den Computer.
+Der Spieler gibt seine Wahl ein, der Computer wählt zufällig eine Option.
+Das Programm bestimmt den Gewinner, zeigt das Ergebnis an und fragt, ob der Spieler erneut spielen möchte.
+Es prüft die Eingaben auf Gültigkeit und behandelt Unentschieden sowie Gewinn- und Verlustsituationen.
+"""
+
 
 import random
 
