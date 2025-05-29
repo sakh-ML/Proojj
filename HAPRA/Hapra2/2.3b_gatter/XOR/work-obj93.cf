@@ -1,0 +1,19 @@
+v 4
+file . "xorgate_tb.vhdl" "cf9def6afdf43609f69a8d883031e504d0b3ae01" "20241023145008.846":
+  entity xorgate_tb at 1( 0) + 0 on 25;
+  architecture test of xorgate_tb at 9( 191) + 0 on 26;
+file . "orgate_tb.vhdl" "6fbb1da3cd625b90c09a07a8c7c1dfebfa68cfb8" "20241023135400.810":
+  entity orgate_tb at 1( 0) + 0 on 21;
+  architecture test of orgate_tb at 9( 189) + 0 on 22;
+file . "andgate_tb.vhdl" "c0b765391f11047887995d6a45fb6b1b8fd67a93" "20241023134755.193":
+  entity andgate_tb at 1( 0) + 0 on 17;
+  architecture test of andgate_tb at 9( 191) + 0 on 18;
+file . "andgate.vhdl" "125985737cda9613d92de70801391b4648372ed9" "20241023134755.163":
+  entity andgate at 10( 520) + 0 on 15;
+  architecture rtl of andgate at 41( 1848) + 0 on 16;
+file . "orgate.vhdl" "4af0af6f9105826b04da20abbddea93bef96eb6e" "20241023135400.776":
+  entity orgate at 3( 43) + 0 on 19;
+  architecture rtl of orgate at 15( 216) + 0 on 20;
+file . "xorgate.vhdl" "0b31a5d40b20965b364efeca4a779c29ee384546" "20241023145008.810":
+  entity xorgate at 3( 44) + 0 on 23;
+  architecture rtl of xorgate at 15( 220) + 0 on 24;

@@ -1,0 +1,40 @@
+v 4
+file . "controller.vhdl" "d651d794ac2c72c1fd3bc3a6592fd0b0572a676e" "20250114162450.160":
+  entity controller at 4( 177) + 0 on 155;
+  architecture structure of controller at 23( 611) + 0 on 156;
+file . "alu.vhdl" "a64748a8cebbd044ca4f6ea4527dd9ff7ad3bbd4" "20250114162450.098":
+  entity alu at 4( 177) + 0 on 151;
+  architecture behavior of alu at 18( 485) + 0 on 152;
+file . "maindecoder.vhdl" "9393ae571bdc403b3bab5d34ca77103ccc0b6f03" "20250114162450.068":
+  entity maindecoder at 4( 177) + 0 on 147;
+  architecture behavior of maindecoder at 21( 540) + 0 on 148;
+file . "regfile.vhdl" "129b14658ecf46ad954e62861b2d6b6ca17004a0" "20250114162450.021":
+  entity regfile at 4( 177) + 0 on 143;
+  architecture behavior of regfile at 21( 590) + 0 on 144;
+file . "syncresff.vhdl" "ba731b9ca05136ada7f0704f563570fa04eedf58" "20250114162449.974":
+  entity syncresff at 4( 177) + 0 on 139;
+  architecture behavior of syncresff at 17( 425) + 0 on 140;
+file . "mips_tb.vhdl" "67dc417cd9a6ee6c98c585d2c5bbef3b4d917af2" "20250114163232.175":
+  entity mips_tb at 1( 0) + 0 on 165;
+  architecture test of mips_tb at 7( 76) + 0 on 166;
+file . "mips.vhdl" "22e5221c6e36ff4ed5b031b136a80614dbd1c345" "20250114163232.076":
+  entity mips at 4( 177) + 0 on 163;
+  architecture structure of mips at 20( 573) + 0 on 164;
+file . "sl2.vhdl" "c1fdb6d3868b632cc0d97fd8354ba64103a2757f" "20250114162449.955":
+  entity sl2 at 4( 177) + 0 on 137;
+  architecture behavior of sl2 at 14( 336) + 0 on 138;
+file . "signext.vhdl" "e259b817ff258e3e0ce3cd577d675736f9ef04d9" "20250114162449.989":
+  entity signext at 4( 177) + 0 on 141;
+  architecture behavior of signext at 14( 369) + 0 on 142;
+file . "mux2.vhdl" "6b798c0ae705e5b43f868dbde871472ef843680d" "20250114162450.053":
+  entity mux2 at 4( 177) + 0 on 145;
+  architecture behavior of mux2 at 17( 432) + 0 on 146;
+file . "aludecoder.vhdl" "c36768a08e14e55c7b33582f537fe777cc01eee3" "20250114162450.083":
+  entity aludecoder at 4( 177) + 0 on 149;
+  architecture behavior of aludecoder at 15( 398) + 0 on 150;
+file . "adder.vhdl" "57f392d5a2c707913a28638eaa61f70229441692" "20250114162450.129":
+  entity adder at 4( 177) + 0 on 153;
+  architecture behavior of adder at 16( 405) + 0 on 154;
+file . "datapath.vhdl" "9928297141c949be49daaef4e77fd385138cfb98" "20250114162450.176":
+  entity datapath at 4( 177) + 0 on 157;
+  architecture structure of datapath at 27( 773) + 0 on 158;

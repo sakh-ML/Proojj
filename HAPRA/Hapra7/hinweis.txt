@@ -1,0 +1,10 @@
+Die grundlegenden Struktur der Abgabe ist in den Unterverzeichnissen angelegt. Diese enthalten die vorgegeben Dateien für die entsprechenden Teilaufgaben. Diese müssen/sollen zum Teil verändert und weitere Dateien angelegt werden. 
+
+Aufgabe 7.1: Die 3 Block-Typen sind in der Datei parallel_mult.vhdl vorgegeben. Die Dateien parallel_mult.vhdl und parallem_mult_tb.vhdl sind zu verändern.
+
+Aufgabe 7.2: Der rca sowie die Shieberegister sind (zum Teil in add_shift.vdhl) vorgegeben. Der Add-Shift Multiplizierer soll in add_shift.vdhl implementiert werden. Die Dateie add_shift.vdhl .vhdl ist zu verändern und eine zugehörige Testbench soll angelegt werden.
+
+Für jede der Aufgaben 7.1 und 7.2 sind Teilaufgaben in der PDF zu bearbeiten.
+
+Denken Sie daran, Ihre vhdl Dateien wo nötig zu kommentieren und zu überprüfen, ob diese kompilierbar sind wenn sie den Kompilierbefehl in der jeweiligen command.txt Datei ausführen!
+

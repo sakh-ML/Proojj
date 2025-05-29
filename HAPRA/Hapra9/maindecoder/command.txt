@@ -1,0 +1,2 @@
+python3 vhdl_script.py maindecoder.vhdl maindecoder_tb.vhdl
+ 

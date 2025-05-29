@@ -1,0 +1,24 @@
+v 4
+file . "add_shift_tb.vhdl" "a5950e935bb461d526006b0dbc212aaeaf1d6f84" "20241206202024.571":
+  entity add_shift_tb at 1( 0) + 0 on 335;
+  architecture rtl of add_shift_tb at 7( 86) + 0 on 336;
+file . "rca.vhdl" "896c49efad1f4cf7c1c5a1fc17ce408bafdd226f" "20241206202024.535":
+  entity rca at 1( 0) + 0 on 323;
+  architecture rtl of rca at 13( 233) + 0 on 324;
+file . "ha.vhdl" "0087d651ea43867a2c00689554d046826a17f5ec" "20241206202024.504":
+  entity ha at 1( 0) + 0 on 319;
+  architecture rtl of ha at 13( 214) + 0 on 320;
+file . "fa.vhdl" "83d575f4d5045ed62b594fcb1c03ca189aed1d34" "20241206202024.520":
+  entity fa at 1( 0) + 0 on 321;
+  architecture rtl of fa at 14( 275) + 0 on 322;
+file . "add_shift.vhdl" "8f54e851b7a521e07004cde3ce5a2509649106f0" "20241206202024.552":
+  entity add_shift at 1( 0) + 0 on 325;
+  architecture behavioral of add_shift at 11( 220) + 0 on 326;
+  entity addierer at 163( 4183) + 0 on 327;
+  architecture behavioral of addierer at 173( 4395) + 0 on 328;
+  entity pipo at 202( 4964) + 0 on 329;
+  architecture behavioral of pipo at 213( 5241) + 0 on 330;
+  entity sipo_l at 230( 5590) + 0 on 331;
+  architecture behavioral of sipo_l at 240( 5832) + 0 on 332;
+  entity siso_r at 266( 6333) + 0 on 333;
+  architecture behavioral of siso_r at 276( 6553) + 0 on 334;

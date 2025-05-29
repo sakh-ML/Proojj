@@ -1,0 +1,15 @@
+Die grundlegenden Struktur der Abgabe ist in den Unterverzeichnissen angelegt. Diese enthalten die vorgegeben Dateien für die entsprechenden Teilaufgaben. Diese müssen/sollen zum Teil verändert und weitere Dateien angelegt werden. 
+
+Aufgabe 6.1ab: Hier ist das DFlipFlop vorgegeben. Es kann aber auch die eigene Implementierung von Übungsblatt 5 verwendet werden. Die Dateien sipo_register.vhdl und sipo_register_tb.vhdl sind zu verändern.
+
+Aufgabe 6.1cd: Hier ist das DFlipFlop und der mux21 vorgegeben. Es kann aber auch die eigene Implementierung von Übungsblatt 5 verwendet werden. Die Dateien piso_register.vhdl und piso_register_tb.vhdl sind zu verändern.
+
+Aufgabe 6.2b: Hier ist der endliche Automat vorgegeben und nichts muss verändert werden.   
+
+Aufgabe 6.2e: Hier ist die Dateien robot.vhdl zu bearbeiten. 
+
+Aufgabe 6.3: Hier sind die Dateien sync_counter.vhdl und sync_conter_tb.vhdl zu bearbeiten. 
+
+Für jede der Aufgaben 6.1-6.3 sind Teilaufgaben in der PDF zu bearbeiten.
+
+Denken Sie daran, Ihre vhdl Dateien wo nötig zu kommentieren und zu überprüfen, ob diese kompilierbar sind wenn sie den Kompilierbefehl in der jeweiligen command.txt Datei ausführen!

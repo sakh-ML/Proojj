@@ -1,0 +1,2 @@
+python3 vhdl_script.py aludecoder.vhdl aludecoder_tb.vhdl
+ 

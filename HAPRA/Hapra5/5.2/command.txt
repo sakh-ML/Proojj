@@ -1,0 +1,1 @@
+python3 vhdl_script.py not_gate.vhdl or_gate.vhdl nor_gate.vhdl and_gate.vhdl SR_Latch.vhdl D_Latch.vhdl ps_ff.vhdl ps_ff_tb.vhdl

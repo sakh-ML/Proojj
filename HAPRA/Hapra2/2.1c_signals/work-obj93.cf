@@ -1,0 +1,4 @@
+v 4
+file . "signals_tb.vhdl" "2f437beda646f3d849ce077b036d298602d395fc" "20241023122519.121":
+  entity signals_tb at 1( 0) + 0 on 15;
+  architecture test of signals_tb at 7( 82) + 0 on 16;

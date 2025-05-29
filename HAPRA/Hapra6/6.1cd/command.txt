@@ -1,0 +1,2 @@
+python3 vhdl_script.py mux21.vhdl DFlipFlop.vhdl piso_register.vhdl piso_register_tb.vhdl
+ 

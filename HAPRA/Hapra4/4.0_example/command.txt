@@ -1,0 +1,1 @@
+python vhdl_script.py not_gate.vhdl negierer.vhdl negierer_tb.vhdl

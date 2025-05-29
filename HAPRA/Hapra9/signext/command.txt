@@ -1,0 +1,2 @@
+python3 vhdl_script.py signext.vhdl signext_tb.vhdl
+ 

@@ -1,0 +1,2 @@
+python3 vhdl_script.py not_gate.vhdl or_gate.vhdl nor_gate.vhdl SR_Latch.vhdl SR_Latch_tb.vhdl
+python3 vhdl_script.py not_gate.vhdl or_gate.vhdl nor_gate.vhdl and_gate.vhdl SR_Latch.vhdl D_Latch.vhdl D_Latch_tb.vhdl

@@ -1,0 +1,2 @@
+python3 vhdl_script.py syncresff.vhdl syncresff_tb.vhdl
+ 
