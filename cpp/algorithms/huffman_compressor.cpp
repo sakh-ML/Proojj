@@ -3,6 +3,28 @@
 using std::bitset;
 #include "heap.hpp"
 
+/*
+* Projekt: Huffman-Komprimierung & Dekomprimierung
+* Beschreibung:
+* Dieses Programm implementiert den Huffman-Algorithmus zur verlustfreien Textkomprimierung.
+* Es liest eine Datei ein, analysiert die Häufigkeit der Zeichen, baut daraus einen Huffman-Baum
+* und erzeugt Bitcodes für jedes Zeichen. Damit kann die Datei komprimiert und später wieder
+* dekomprimiert werden.
+*
+* Funktionen:
+* - Analyse der Zeichenhäufigkeit (Frequenztabelle)
+* - Aufbau des Huffman-Baums
+* - Erzeugung von Bit-Codes für jedes Zeichen
+* - Komprimierung einer Datei auf Bit-Ebene
+* - Dekomprimierung (auf Grundlage des Baumes)
+*
+* Beispiel:
+* Die Datei "wordlist-german.txt" wird mit Huffman-Kompression auf "wordlist-german.hfm" komprimiert
+* und anschließend in "test.txt" dekomprimiert.
+*
+* Dateiname: huffman_compressor.cpp
+*/
+
 struct Code {
   Code(int l = 0, bitset<64> c = {}) : length_{l}, code_{c} {}
   int length_;
