@@ -1,3 +1,13 @@
+/*
+Template-Version des Merge-Sort-Algorithmus:
+- merge<T>: Mergt zwei sortierte Arrays (a und b) in ein drittes Array (c).
+- merge_sort<T>: Sortiert ein Array iterativ mittels Merge-Sort.
+Dabei werden Teilarrays schrittweise verdoppelt und gemerged.
+- Funktioniert mit beliebigen Datentypen, die Vergleichsoperator '<' unterstützen.
+- Beispielhaft im main: Sortierung von int, float und char Arrays.
+*/
+
+
 #include <cstdio>
 
 // ================ Ändern Sie diese Funktion ab ================

@@ -1,3 +1,12 @@
+/*
+Implementierung des Merge-Sort Algorithmus:
+- Sortiert ein int-Array mit divide-and-conquer.
+- Enthält Hilfsfunktionen zum Mergen sortierter Teilarrays.
+- Erzeugt ein großes Array mit Zufallszahlen und sortiert es.
+- Prüft und gibt das Ergebnis aus.
+*/
+
+
 #include <random>
 #include <iostream>
 

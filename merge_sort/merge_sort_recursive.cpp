@@ -1,3 +1,12 @@
+/*
+Implementierung von Merge-Sort mit Rekursion:
+- Die Funktion `mergesort` sortiert ein Array zwischen zwei Indizes.
+- Die Hilfsfunktion `merge` kombiniert zwei bereits sortierte Teilarrays.
+- `print_all` gibt ein Array auf der Konsole aus.
+- Im `main` werden zwei Beispiel-Arrays sortiert und vor/nach der Sortierung ausgegeben.
+*/
+
+
 #include <cstdio>
 
 // merge 2 sortierte Arrays a[0,la-1] und b[0,lb-1]
