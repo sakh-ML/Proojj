@@ -1,5 +1,21 @@
-#include <omp.h>
+/*
+* Dieses Programm demonstriert die parallele Addition zweier großer
+* Ganzzahl-Arrays mithilfe von OpenCL und OpenMP. 
+* 
+* Es sucht zuerst nach verfügbaren OpenCL-Plattformen und -Geräten,
+* kompiliert einen einfachen Kernel, der zwei Eingabearrays elementweise
+* addiert, und führt diesen Kernel auf dem OpenCL-Gerät aus.
+* 
+* Anschließend wird die gleiche Addition mit OpenMP parallel auf der CPU
+* durchgeführt, um die Korrektheit der OpenCL-Ergebnisse zu überprüfen.
+* Die Laufzeiten beider Methoden werden gemessen und ausgegeben.
+* 
+* Ziel ist der Vergleich von GPU-beschleunigter Berechnung (OpenCL) mit
+* CPU-Parallelisierung (OpenMP) bezüglich Leistung und Ergebnisgenauigkeit.
+*/
 
+
+#include <omp.h>
 #include <CL/cl.hpp>
 #include <iostream>
 
