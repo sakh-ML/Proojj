@@ -1,3 +1,22 @@
+/*
+* Dieses Programm demonstriert eine einfache Vektoraddition mit OpenCL.
+* 
+* Es sucht zunächst verfügbare OpenCL-Plattformen und Geräte, wählt das
+* erste Gerät aus und erstellt einen OpenCL-Kontext.
+* 
+* Anschließend wird ein Kernel kompiliert, der zwei Eingabearrays
+* elementweise addiert und das Ergebnis in ein Ausgabearray schreibt.
+* 
+* Das Programm schreibt zwei Beispiel-Arrays in den Gerätespeicher,
+* führt den Kernel aus und liest das Ergebnis zurück.
+* 
+* Abschließend wird das Ergebnis ausgegeben.
+* 
+* Ziel ist die Demonstration der Grundprinzipien der OpenCL-Programmierung
+* mit C++.
+*/
+
+
 #include <iostream>
 #include <CL/cl.hpp>
      

@@ -1,10 +1,25 @@
-#include <omp.h>
+/*
+Dieses Programm demonstriert die Nutzung von OpenCL zur parallelen
+Berechnung zweier Vektoroperationen auf großen Datenmengen.
+Es initialisiert drei Eingabevektoren, lädt sie in den GPU-Speicher
+und führt zwei verschiedene Rechenkerne (Kernels) aus, die jeweils
+Elementweise Operationen auf den Vektoren ausführen.
 
+Zusätzlich wird die gleiche Berechnung auf der CPU mit OpenMP
+parallelisiert, um die Ergebnisse zu validieren und die Performance
+zwischen CPU- und GPU-Berechnung zu vergleichen.
+
+Die Ausgabe bestätigt, ob die Ergebnisse der GPU und CPU übereinstimmen.
+*/
+
+
+#include <omp.h>
 #include <cmath>
 #include <CL/opencl.hpp>
 #include <iostream>
 
 #define PROBLEM_SIZE 0x1000000UL
+
 
 int main() {
     // Search the compute platform first
