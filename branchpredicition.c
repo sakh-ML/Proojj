@@ -10,17 +10,44 @@ unsigned long test_data[TEST_SIZE];
 double bench(unsigned long ratio) {
     // Generate random data
     for (unsigned long i = 0; i < TEST_SIZE; i++) {
-        test_data[i] = rand() % 100; //random number from 0 to 99
+        test_data[i] = rand() % 100; // random number von 0 bis 99
     }
 
     volatile unsigned long x;
     clock_t before = clock();
     for (unsigned long i = 0; i < TEST_SIZE; i++) {
-  	//TODO 
+
+        //50% 50%
+        //if(test_data[i] % 2 == 0){ 
+        //    ++x;
+        //}
+        //else{
+        //    ++x;
+        //}
+
+        //90% 10%
+        //if(test_data[i] >= 9){
+        //    ++x;
+        //}
+        //else{
+        //    ++x;
+        //}
+
+        // 80% 20%
+        //if(test_data[i] >= 19){
+        //    ++x;
+        //}
+        //else{
+        //    ++x;
+        //}
+
+
+
+
     }
     clock_t after = clock();
 
-    return ((double)(after - before)) / CLOCKS_PER_SEC;
+    return ((double)(after - before)) / CLOCKS_PER_SEC; // brenchen wir die Laufzeit
 }
 
 int main() {
