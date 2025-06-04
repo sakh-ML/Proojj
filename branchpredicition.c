@@ -12,7 +12,7 @@ double bench(unsigned long ratio) {
     for (unsigned long i = 0; i < TEST_SIZE; i++) {
         test_data[i] = rand() % 100; // random number von 0 bis 99
     }
-
+    //ratio is the perecnatge of branching
     volatile unsigned long x;
     clock_t before = clock();
     for (unsigned long i = 0; i < TEST_SIZE; i++) {
@@ -34,12 +34,12 @@ double bench(unsigned long ratio) {
         //}
 
         // 80% 20%
-        //if(test_data[i] >= 19){
-        //    ++x;
-        //}
-        //else{
-        //    ++x;
-        //}
+        if(test_data[i] >= ratio){
+            ++x;
+        }
+        else{
+            ++x;
+        }
 
 
 
@@ -52,7 +52,7 @@ double bench(unsigned long ratio) {
 
 int main() {
     for (unsigned long i = 0; i <= 100; i++) {
-        double time = bench(i);
+        double time = bench(i); // branch ratio
         printf("%d, %f\n", i, time);
     }
 }
