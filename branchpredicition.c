@@ -10,13 +10,13 @@ unsigned long test_data[TEST_SIZE];
 double bench(unsigned long ratio) {
     // Generate random data
     for (unsigned long i = 0; i < TEST_SIZE; i++) {
-        test_data[i] = rand() % 100;
+        test_data[i] = rand() % 100; //random number from 0 to 99
     }
 
     volatile unsigned long x;
     clock_t before = clock();
     for (unsigned long i = 0; i < TEST_SIZE; i++) {
-        // INSERT CODE HERE
+  	//TODO 
     }
     clock_t after = clock();
 
