@@ -1,4 +1,4 @@
-// compile with gcc -O0 bench.c
+// compile with gcc -O0 branchprediciton.c (name.c)
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
