@@ -17,23 +17,6 @@ double bench(unsigned long ratio) {
     clock_t before = clock();
     for (unsigned long i = 0; i < TEST_SIZE; i++) {
 
-        //50% 50%
-        //if(test_data[i] % 2 == 0){ 
-        //    ++x;
-        //}
-        //else{
-        //    ++x;
-        //}
-
-        //90% 10%
-        //if(test_data[i] >= 9){
-        //    ++x;
-        //}
-        //else{
-        //    ++x;
-        //}
-
-        // 80% 20%
         if(test_data[i] >= ratio){
             ++x;
         }
