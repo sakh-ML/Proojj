@@ -134,7 +134,32 @@ void *thread_fun(void *arg){
     //Perform random accesses to each numa node and measure access latencies
     volatile long a = 0;
 
-    
+    struct timespec start, end;
+    for(unsigned int node = 0; node < count_numa_nodes; ++node){
+
+        volatile unsigned long *buffer = (volatile unsigned long *)numa_buffers[node];
+        unsigned long entries = NUMA_BUFFER_SIZE / sizeof(unsigned long);
+        unsigned long sum = 0;
+        clock_gettime(CLOCK_MONOTONIC, &start); // start the timeeer !
+
+        for(unsigned long i = 0; i < NUMBER_RANDOM_ACCESSES; ++i){
+            // i aber random zwischen 1 ..... NUMA_BUFFER_SIZE 
+
+            unsigned long index = rand() % entries;
+            sum += buffer[index];
+        }
+
+        clock_gettime(CLOCK_MONOTONIC, &end);
+
+        uint64_t duration_ns =
+            (end.tv_sec - start.tv_sec) * 1000000000UL +
+            (end.tv_nsec - start.tv_nsec);
+
+        measure_results[node] = duration_ns; //save it in the measure result !! as index node
+
+        printf("Thread %lu: NUMA Node %u - total time = %lu ns, average = %lu ns\n",
+               thread_num, node, duration_ns, duration_ns / NUMBER_RANDOM_ACCESSES);
+    }
     
     //Release the next thread
     if(thread_num!=count_threads-1){
