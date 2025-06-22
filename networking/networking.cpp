@@ -12,7 +12,9 @@ if(my_socket == -1){
 struct sockadrr_in my_addr;
 memset(my_addr.sa_data, );
 
-if(bind(my_socket, ))
+if(bind(my_socket, &my_addr, sizeof(my_addr) ) == -1){
+	return -1;
+}
 
 	return 0;
 }
