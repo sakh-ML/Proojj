@@ -111,3 +111,9 @@ class Student {
   // Gibt die Note an Position grade_index zurück
   float get_grade(int grade_index) { return grades_[grade_index]; }
 };
+
+int main(){
+
+
+	return 0;
+}
