@@ -34,11 +34,21 @@ int main(int argc, char **argv) {
 
     // Füge nun Prefetch-Instruktionen hinzu
     result = 0;
-    auto prefetch_distance = 0U;
+    //auto prefetch_distance = 0U;
+    auto prefetch_distance = 1500U;
     timer.start();
 
     for(auto i = 0U; i < ELEMENTS; ++i){
-        
+        if(i + prefetch_distance < ELEMENTS){
+            //Einer davon auswählen !! Level element {0,1,2,3}
+            prefetch(data_array[indices[i + prefetch_distance]], 3);
+            //prefetch(data_array[i + prefetch_distance], 3);
+            //prefetch(data_array[i + prefetch_distance], 2);
+            //prefetch(data_array[i + prefetch_distance], 1);
+            //prefetch(data_array[i + prefetch_distance], 0);
+
+        }
+        result += data_array[indices[i]].compute();
     }
 
     timer.stop();
