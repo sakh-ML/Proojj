@@ -8,11 +8,22 @@ URL = 'https://en.wikipedia.org/wiki/List_of_highest-grossing_films'
 response = requests.get(URL)
 soup = BeautifulSoup(response.content, 'html.parser')
 
-table_2 = soup.find('table', class_ = "wikitable plainrowheaders")
+table = soup.find('table', class_ = "wikitable plainrowheaders")
 
-colunms = table_2.find('tr').text
-colunms = [line.strip() for line in colunms.split('\n') if line.strip()]
+headers = table.find('tr').text
+headers = [line.strip() for line in headers.split('\n') if line.strip()]
+
+df = pd.DataFrame(columns=headers)
 
 
-df = pd.DataFrame(columns=colunms)
+rows = table.find_all('tr')
+
+arr_str_arr = []
+for row in rows[1 : ]:
+    cells = row.find_all(['th' , 'td'])
+    arr_str_arr.append([element.get_text().strip() for element in cells])
+    df.loc[len(df)] = [element.get_text().strip() for element in cells]
+
+
+#print(df.to_string(index=False))
 
