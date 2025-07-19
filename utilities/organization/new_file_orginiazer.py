@@ -19,26 +19,28 @@ for file in os.listdir(PATH):
     _, folder_extenction = os.path.splitext(file)
     if folder_extenction == "":
         continue
-    print(file)
     folder_extenction = folder_extenction[1:]
-    print(folder_extenction)
+    full_file_path = f"{PATH}/{file}"
+    #print(full_file_path)
+    #print(folder_extenction)
     
     for key, array_value in file_types.items():
         #the extcteion of the file, is in our files_types
         if folder_extenction in array_value:
             
             #erstelle ein Folder Path/key wenn es nicht exist und file da moven.
-            where_to_move_the_file = f"{PATH}/{key}/{file}" 
-            full_file_path = f"{PATH}/{file}"
+            folder_destentation = f"{PATH}/{key}"
+            where_to_move_the_file = f"{PATH}/{key}/{file}"
             
-            if os.path.exists(where_to_move_the_file):
+            #print(folder_destentation)
+            #print(where_to_move_the_file)
+            if os.path.exists(folder_destentation):
                 shutil.move(full_file_path, where_to_move_the_file)
                 break
             
             #erstelle where_to_move_the_file if not exists, und dann file da bewegen
             else:
-                #to fix
-                os.mkdir(where_to_move_the_file)
+                os.mkdir(folder_destentation)
                 shutil.move(full_file_path, where_to_move_the_file)
                 break
                 
@@ -49,15 +51,14 @@ for file in os.listdir(PATH):
         
         new_directry_path = f"{PATH}/Others"
         where_to_move_file = f"{PATH}/Others/{file}"
-        where_file_was = f"{PATH}/{file}" 
-        
+
         if os.path.exists(new_directry_path):
             
-            shutil.move(where_file_was, where_to_move_file)
-            break
+            shutil.move(full_file_path, where_to_move_file)
         else:
             os.mkdir(new_directry_path)
-            shutil.move(where_file_was, where_to_move_file)
+            shutil.move(full_file_path, where_to_move_file)
+            
             
     
-                  
+                          
