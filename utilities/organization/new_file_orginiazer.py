@@ -21,3 +21,15 @@ for file in os.listdir(PATH):
         continue
     folder_extenction = folder_extenction[1:]
     
+    for key, array_value in file_types.items():
+        #the extcteion of the file, is in our files_types
+        if folder_extenction in array_value:
+            print("Pingo, add it to the right key!!")
+        #the excteion of this file is not found in the files_types. add it to a folder other (platzhalter)
+        else:
+            print("!!!, lets add it for now to the other folder")
+        
+    #if :
+    #    asdasd
+    #else:
+           
