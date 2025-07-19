@@ -7,8 +7,7 @@ file_types = {
     #etc .....
 }
 
-#PATH = input("Write the directory path: ")
-PATH = "/home/ml-abu-saleh-ml/Downloads"
+PATH = input("Write the directory path: ")
 
 if os.path.exists(PATH) == False:
     raise Exception("the path dosent exist")
@@ -61,4 +60,4 @@ for file in os.listdir(PATH):
             
             
     
-                          
+                                 
