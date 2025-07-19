@@ -23,10 +23,10 @@ rows = table.find_all('tr')[1:]
 for row in rows:
     cells = row.find_all(['th' , 'td'])
     clean_row = []
-    #delete all tje sups
+    #delete all the sups,span.
     for cell in cells:
-        for sup in cell.find_all('sup'):
-            sup.decompose()
+        for sup_span in cell.find_all(['span', 'sup']):
+            sup_span.decompose()
         clean_row.append(cell.get_text(strip=True))
     df.loc[len(df)] = clean_row
         
