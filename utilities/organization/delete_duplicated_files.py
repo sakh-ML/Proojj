@@ -106,18 +106,20 @@ def delete_duplicates_in_file():
             #wenn ja löschen wir es, sonst nicht !.
 
             if file_name_without_duplicate_number_minus != "":
-                full_file_name = f"{PATH}/{file_name_without_duplicate_number_minus}{folder_extenction}"
+                full_path_file_name_without_dup = f"{PATH}/{file_name_without_duplicate_number_minus}{folder_extenction}"
                 
             elif file_name_without_duplicate_number_parenthesse != "":
-                full_file_name = f"{PATH}/{file_name_without_duplicate_number_parenthesse}{folder_extenction}"
+                full_path_file_name_without_dup = f"{PATH}/{file_name_without_duplicate_number_parenthesse}{folder_extenction}"
 
             #überprüfen ob die datei ohne -number oder (number) wirklich existert blatt1(3) -> blatt1
             #und überprüfen ob die beide datei wirklich den gleichen Ehalt haben
             
+            full_file_path = f"{PATH}/{file}"
             #print("comparing", full_file_name, "with", f"{PATH}/{file}")
-            if os.path.exists(full_file_name) and get_file_hash(full_file_name) == get_file_hash(f"{PATH}/{file}"):
+            if os.path.exists(full_path_file_name_without_dup) and get_file_hash(full_path_file_name_without_dup) == get_file_hash(full_file_path):
                 #Es handelt sich wirklich also um ein Dupliakte -> file (duplikate) löschen.
                 print(f"Duplicate found and can be deleted: {file}")
+                os.remove(full_file_path)
 
 
 def main():
