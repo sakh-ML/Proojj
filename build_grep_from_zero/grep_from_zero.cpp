@@ -3,12 +3,27 @@
 #include <fstream> 
 #include <vector>
 
-bool find_pattern_in_line(std::string line, std::string pattern){
+bool find_pattern_in_line(std::string pattern, std::string line){
 
     if(pattern.length() == 1){
         for(int i = 0; i < line.length(); ++i){
             if(line[i] == pattern[0]){
                 return true;
+            }
+        }
+    }
+
+    else{
+        for(int i = 0; i < line.length(); ++i){
+            if(line[i] == pattern[0]){
+                for(int j = 1; j < pattern.length(); ++j){
+                    if(j == pattern.length() - 1 && line[i + j] == pattern[j]){
+                        return true;
+                    }
+                    if(line[i + j] != pattern[j]){
+                        continue;
+                    }
+                }
             }
         }
     }
@@ -25,19 +40,16 @@ std::vector<std::string> pattern_matching(std::string pattern, std::string file_
 		std::cerr << "Die Datei könnte nicht geöffnet werden !!, bitte Geben Sie eine Datei ein.";
         return result;
 	}
-    
-    if (pattern.length() == 1){
 
-       std::string line;
+    std::string line;
 
-       while(std::getline(file, line)){
-           if(find_pattern_in_line(line, pattern)){
-            std::cout << line << std::endl;
-            result.push_back(line);
-           }
+    while(std::getline(file, line)){
+        if(find_pattern_in_line(pattern, line)){
+        std::cout << line << std::endl;
+        result.push_back(line);
+        }
 
-        }   
-    }
+    }   
     
     return result;
 }
