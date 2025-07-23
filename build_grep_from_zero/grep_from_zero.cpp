@@ -5,6 +5,11 @@
 
 bool find_pattern_in_line(std::string pattern, std::string line){
 
+
+    if(pattern.length() > line.length()){
+        return false;
+    }
+
     if(pattern.length() == 1){
         for(int i = 0; i < line.length(); ++i){
             if(line[i] == pattern[0]){
@@ -14,15 +19,19 @@ bool find_pattern_in_line(std::string pattern, std::string line){
     }
 
     else{
-        for(int i = 0; i < line.length(); ++i){
+        for(int i = 0; i <= line.length() - pattern.length(); ++i){
             if(line[i] == pattern[0]){
+                
+                bool check_status = true;
                 for(int j = 1; j < pattern.length(); ++j){
-                    if(j == pattern.length() - 1 && line[i + j] == pattern[j]){
-                        return true;
-                    }
+
                     if(line[i + j] != pattern[j]){
-                        continue;
+                        check_status = false;
+                        break;
                     }
+                }
+                if(check_status == true){
+                    return true;
                 }
             }
         }
@@ -37,7 +46,7 @@ std::vector<std::string> pattern_matching(std::string pattern, std::string file_
     std::vector<std::string> result;
 
 	if(!file){
-		std::cerr << "Die Datei könnte nicht geöffnet werden !!, bitte Geben Sie eine Datei ein.";
+		std::cerr << "Die Datei könnte nicht geöffnet werden !!, bitte Geben Sie eine Datei ein." << std::endl;
         return result;
 	}
 
@@ -58,7 +67,7 @@ std::vector<std::string> pattern_matching(std::string pattern, std::string file_
 int main(int argc, char* argv[]){
 
 	if(argc < 3){
-		std::cerr << "Fehler, bitte geben Sie suchmuster und Dateiname ein";
+		std::cerr << "Fehler, bitte geben Sie suchmuster und Dateiname ein" << std::endl;
         return -1;
 	}
 
