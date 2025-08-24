@@ -3,6 +3,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//My Mandel brot set project
 
 public class Mandelbrot_set {
     public static void main(String[] args) {
