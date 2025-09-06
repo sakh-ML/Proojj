@@ -27,7 +27,7 @@ int main(){
 
 	SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 255, 255, 255));
 
-	SDL_UpdateWindowSurface(screenSurface);
+	SDL_UpdateWindowSurface(window);
 
 	SDL_Delay(5000);
 
