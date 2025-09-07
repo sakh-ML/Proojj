@@ -7,8 +7,8 @@
 #include <stdbool.h>
 #include <math.h>
 
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 800
+#define SCREEN_WIDTH 1000
+#define SCREEN_HEIGHT 1000
 #define MAX_PARTICLES 30
 #define DAMPING 0.9
 #define G 1.5
@@ -77,6 +77,22 @@ void handle_collosions(Particle particles[]){
 				particles[j].x = -100;
 				particles[j].x = -100;
 
+				float dx = particles[j].x - particles[i].x;
+				float dy = particles[j].y - particles[i].y;
+
+				float distance = compute_distance(particles[i], particles[j]);
+
+				float overlap = particles[i].radius + particles[j].radius - distance;
+
+				float nx = overlap / distance;
+				float ny = overlap / distance;
+
+				particles[i].x -= nx * (overlap / 2);
+				particles[i].y -= ny * (overlap / 2);
+
+				particles[j].x += nx * (overlap/ 2);
+				particles[j].y += ny * (overlap / 2);
+
 
  			}
 		}
@@ -93,6 +109,11 @@ void handle_collosions(Particle particles[]){
 		if(particles[i].y - particles[i].radius <= 0){
 
 		}
+
+		//right collosion
+		if(true){}
+		//left collosion
+		if(true){}
 	}
 
 }
