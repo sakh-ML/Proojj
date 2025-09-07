@@ -1,14 +1,31 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
-#define SCREEN_WIDTH 640
-#define SCREEN_HEIGHT 480
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 800
 #include <stdbool.h>
 
 
 typedef struct Particle{
 	float x, y;
  	float vx, vy; // velocity
+	int radius;
 } Particle;
+
+
+void drawCircle(SDL_Surface* surface, int cx, int cy, int radius, Uint32 color) {
+    for (int y = -radius; y <= radius; y++) {
+        for (int x = -radius; x <= radius; x++) {
+            if (x*x + y*y <= radius*radius) { // inside circle
+                int px = cx + x;
+                int py = cy + y;
+                if (px >= 0 && px < surface->w && py >= 0 && py < surface->h) {
+                    Uint32* pixels = (Uint32*)surface->pixels;
+                    pixels[py * surface->w + px] = color;
+                }
+            }
+        }
+    }
+}
 
 
 int main(){
@@ -39,14 +56,18 @@ int main(){
 	
 	screenSurface = SDL_GetWindowSurface(window);
 
-	SDL_Rect rect = {(int) p1.x, (int) p1.y, 30, 20};
+	//SDL_Rect rect = {(int) p1.x, (int) p1.y, 30, 20};
 
+	Particle particle = {SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, 0,0, 20};
+	Uint32 blue = SDL_MapRGB(screenSurface->format, 0, 0, 255);
+	Uint32 black = SDL_MapRGB(screenSurface->format, 0, 0, 0);
 	
 	bool running = true;
 	while(running){
-
-		SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0, 0, 0) );
-		SDL_FillRect(screenSurface, &rect, SDL_MapRGB(screenSurface->format, 0, 0, 255) );
+		
+		SDL_FillRect(screenSurface, NULL, black);
+		//SDL_FillRect(screenSurface, &rect, blue);
+		drawCircle(screenSurface, particle.x, particle.y, particle.radius, blue);
 
 		SDL_UpdateWindowSurface(window);
 		SDL_Event event;
@@ -57,18 +78,18 @@ int main(){
 			else if(event.type == SDL_KEYDOWN){
 
 				if(event.key.keysym.sym == SDLK_DOWN){
-					rect.y += 2;
+					particle.y += 5;
 	
 				}
 				else if(event.key.keysym.sym == SDLK_UP){
-					rect.y -= 2;
+					particle.y -= 5;
 	
 				}
 				else if(event.key.keysym.sym == SDLK_LEFT){
-					rect.x -= 2;
+					particle.x -= 5;
 				}
 				else if(event.key.keysym.sym == SDLK_RIGHT){
-					rect.x += 2;
+					particle.x += 5;
 				}
 
 				//SDL_FillRect(screenSurface, &rect, SDL_MapRGB(screenSurface->format, 0, 0, 255) );
@@ -78,7 +99,6 @@ int main(){
 		if(!running){
 
 			SDL_DestroyWindow(window);
-
 			SDL_Quit();
 			break;
 		}
