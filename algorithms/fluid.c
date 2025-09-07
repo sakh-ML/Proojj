@@ -9,6 +9,7 @@
 #define SCREEN_HEIGHT 800
 #define MAX_PARTICLES 10
 
+int particle_count = 0;
 
 typedef struct Particle{
 	float x, y;
@@ -29,6 +30,16 @@ void drawCircle(SDL_Surface* surface, int cx, int cy, int radius, Uint32 color) 
                 }
             }
         }
+    }
+}
+
+
+void drawParticles(SDL_Surface* surface,Particle particles[]){
+
+    Uint32 blue = SDL_MapRGB(surface->format, 0, 0, 255);
+   
+    for(int i = 0; i < particle_count; ++i){
+        drawCircle(surface, particles[i].x, particles[i].y, particles[i].radius, blue);
     }
 }
 
@@ -54,14 +65,16 @@ int main(){
 
 	//velcoity for now is 0
 	Particle particle = {SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, 0, 0.5, 20};
-	Uint32 blue = SDL_MapRGB(screenSurface->format, 0, 0, 255);
-	Uint32 black = SDL_MapRGB(screenSurface->format, 0, 0, 0);
+    Particle particels[MAX_PARTICLES];
+    Uint32 blue = SDL_MapRGB(screenSurface->format, 0, 0, 255);
+    Uint32 black = SDL_MapRGB(screenSurface->format, 0, 0, 0);
+   
 	
 	bool running = true;
 	while(running){
 		
 		SDL_FillRect(screenSurface, NULL, black);
-		drawCircle(screenSurface, particle.x, particle.y, particle.radius, blue);
+		drawParticles(screenSurface, particels);
 
 		SDL_UpdateWindowSurface(window);
 		SDL_Event event;
@@ -85,6 +98,24 @@ int main(){
 				else if(event.key.keysym.sym == SDLK_RIGHT){
 					particle.x += 5;
 				}
+			}
+
+			else if(event.type == SDL_MOUSEBUTTONDOWN){
+
+                if(particle_count < MAX_PARTICLES){
+                    
+                    int mx = event.button.x;
+                    int my = event.button.y;
+
+                    Particle particle;
+                    particle.x = mx;
+                    particle.y = my;
+                    particle.vx = 0;
+                    particle.vy = 0;
+                    particle.radius = 20;
+
+                    particels[particle_count++] = particle;
+                }
 			}
 		}
 		if(!running){
