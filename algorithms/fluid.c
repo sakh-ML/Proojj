@@ -9,9 +9,9 @@
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
-#define MAX_PARTICLES 10
+#define MAX_PARTICLES 30
 
-int particle_count = 0;
+int g_particle_count = 0;
 
 typedef struct Particle{
 	float x, y;
@@ -21,7 +21,7 @@ typedef struct Particle{
 } Particle;
 
 
-void drawCircle(SDL_Renderer* renderer, int cx, int cy, int radius) {
+void draw_circle(SDL_Renderer* renderer, int cx, int cy, int radius) {
     for (int x = -radius; x <= radius; x++) {
         for (int y = -radius; y <= radius; y++) {
             if (x*x + y*y <= radius*radius) { // inside circle
@@ -33,34 +33,34 @@ void drawCircle(SDL_Renderer* renderer, int cx, int cy, int radius) {
 }
 
 
-void drawParticles(SDL_Renderer* renderer,Particle particles[]){
+void draw_particles(SDL_Renderer* renderer,Particle particles[]){
 
 	//blue color
 	SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); 
    
-    for(int i = 0; i < particle_count; ++i){
-        drawCircle(renderer, particles[i].x, particles[i].y, particles[i].radius);
+    for(int i = 0; i < g_particle_count; ++i){
+        draw_circle(renderer, particles[i].x, particles[i].y, particles[i].radius);
     }
 }
 
-void addVelcoityToParticles(Particle particles[]){
+void add_veloctiy(Particle particles[]){
 	
-	for(int i = 0; i < particle_count; ++i){
+	for(int i = 0; i < g_particle_count; ++i){
 		particles[i].y += particles[i].vy;
 		//particles[i].vy += particles[i].vy;
 	}
 }
 
-float distancyBettwenTwoParticles(Particle p1, Particle p2){
+float compute_distance(Particle p1, Particle p2){
 
 	return sqrt(pow((p2.x - p1.x), 2) + pow((p2.y - p1.y), 2));
 }
 
-void handleCollisions(Particle particles[]){
-	for(int i = 0; i < particle_count - 1; ++i){
-		for(int j= i + 1; j < particle_count; ++j){
+void handle_collosions(Particle particles[]){
+	for(int i = 0; i < g_particle_count - 1; ++i){
+		for(int j= i + 1; j < g_particle_count; ++j){
 			//check collosion bettwen the two particles
-			if(distancyBettwenTwoParticles(particles[i], particles[j]) <= particles[i].radius + particles[j].radius){
+			if(compute_distance(particles[i], particles[j]) <= particles[i].radius + particles[j].radius){
 
 				/*float tempVx = particles[i].vx;
 				float tempVy = particles[i].vy;
@@ -81,7 +81,7 @@ void handleCollisions(Particle particles[]){
 	}
 
 	//ground collison
-	for(int i = 0; i < particle_count; ++i){
+	for(int i = 0; i < g_particle_count; ++i){
 		if(particles[i].y + particles[i].radius >= SCREEN_HEIGHT || particles[i].y - particles[i].radius <= 0){
 			particles[i].vy *= -0.9;
 		}
@@ -121,7 +121,7 @@ int main(){
 		SDL_RenderClear(renderer);
 
 		// draw all particles on the screen
-		drawParticles(renderer, particels);
+		draw_particles(renderer, particels);
 		SDL_RenderPresent(renderer);
 
 		//SDL_UpdateWindowSurface(window);
@@ -133,7 +133,7 @@ int main(){
 
 			else if(event.type == SDL_MOUSEBUTTONDOWN){
 
-                if(particle_count < MAX_PARTICLES){
+                if(g_particle_count < MAX_PARTICLES){
                     
                     int mx = event.button.x;
                     int my = event.button.y;
@@ -145,7 +145,7 @@ int main(){
                     particle.vy = 0.5;
                     particle.radius = 20;
 
-                    particels[particle_count++] = particle;
+                    particels[g_particle_count++] = particle;
                 }
 			}
 		}
@@ -156,8 +156,8 @@ int main(){
 			break;
 		}
 
-		addVelcoityToParticles(particels);
-		handleCollisions(particels);
+		add_veloctiy(particels);
+		handle_collosions(particels);
 		SDL_Delay(5); 
 	}
 
