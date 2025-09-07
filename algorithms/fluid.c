@@ -17,6 +17,7 @@ typedef struct Particle{
 	float x, y;
  	float vx, vy; // velocity
 	int radius;
+	float mass;
 } Particle;
 
 
@@ -79,6 +80,12 @@ void handleCollisions(Particle particles[]){
 
 
  			}
+		}
+	}
+
+	for(int i = 0; i < particle_count; ++i){
+		if(particles[i].y + particles[i].radius >= SCREEN_HEIGHT){
+			particles[i].y -= particles[i].vy;
 		}
 	}
 }
