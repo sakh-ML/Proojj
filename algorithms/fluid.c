@@ -1,8 +1,13 @@
+//Kompiliern :- gcc fluid.c -o sdl2_test `sdl2-config --cflags --libs`
+//Ausführen :- ./sdl2_test
+
 #include <stdio.h>
 #include <SDL2/SDL.h>
+#include <stdbool.h>
+
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
-#include <stdbool.h>
+#define MAX_PARTICLES 10
 
 
 typedef struct Particle{
@@ -48,7 +53,7 @@ int main(){
 	screenSurface = SDL_GetWindowSurface(window);
 
 	//velcoity for now is 0
-	Particle particle = {SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, 0,0, 20};
+	Particle particle = {SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2, 0, 0.5, 20};
 	Uint32 blue = SDL_MapRGB(screenSurface->format, 0, 0, 255);
 	Uint32 black = SDL_MapRGB(screenSurface->format, 0, 0, 0);
 	
@@ -88,6 +93,8 @@ int main(){
 			SDL_Quit();
 			break;
 		}
+
+		particle.y += particle.vy;
 	}
 
 	return 0;
