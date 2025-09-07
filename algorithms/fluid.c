@@ -10,6 +10,8 @@
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
 #define MAX_PARTICLES 30
+#define DAMPING 0.9
+#define G 1.5
 
 int g_particle_count = 0;
 
@@ -46,8 +48,8 @@ void draw_particles(SDL_Renderer* renderer,Particle particles[]){
 void add_veloctiy(Particle particles[]){
 	
 	for(int i = 0; i < g_particle_count; ++i){
+		particles[i].vy += G;
 		particles[i].y += particles[i].vy;
-		//particles[i].vy += particles[i].vy;
 	}
 }
 
@@ -80,10 +82,16 @@ void handle_collosions(Particle particles[]){
 		}
 	}
 
-	//ground collison
+	//collison
 	for(int i = 0; i < g_particle_count; ++i){
-		if(particles[i].y + particles[i].radius >= SCREEN_HEIGHT || particles[i].y - particles[i].radius <= 0){
-			particles[i].vy *= -0.9;
+		//ground collosion
+		if(particles[i].y + particles[i].radius >= SCREEN_HEIGHT){
+			particles[i].y = SCREEN_HEIGHT - particles[i].radius;
+			particles[i].vy *= -DAMPING;
+		}
+		//cieling collosion
+		if(particles[i].y - particles[i].radius <= 0){
+
 		}
 	}
 
