@@ -1,9 +1,11 @@
-//Kompiliern :- gcc fluid.c -o sdl2_test `sdl2-config --cflags --libs`
+//Kompiliern :- gcc fluid.c -o sdl2_test `sdl2-config --cflags --libs` -lm
 //Ausführen :- ./sdl2_test
+
 
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <stdbool.h>
+#include <math.h>
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
@@ -41,6 +43,44 @@ void drawParticles(SDL_Surface* surface,Particle particles[]){
     for(int i = 0; i < particle_count; ++i){
         drawCircle(surface, particles[i].x, particles[i].y, particles[i].radius, blue);
     }
+}
+
+void addVelcoityToParticles(Particle particles[]){
+	
+	for(int i = 0; i < particle_count; ++i){
+		particles[i].y += particles[i].vy;
+		//particles[i].vy += particles[i].vy;
+	}
+}
+
+float distancyBettwenTwoParticles(Particle p1, Particle p2){
+
+	return sqrt(pow((p2.x - p1.x), 2) + pow((p2.y - p1.y), 2));
+}
+
+void handleCollisions(Particle particles[]){
+	for(int i = 0; i < particle_count - 1; ++i){
+		for(int j= i + 1; j < particle_count; ++j){
+			//check collosion bettwen the two particles
+			if(distancyBettwenTwoParticles(particles[i], particles[j]) <= particles[i].radius + particles[j].radius){
+
+				/*float tempVx = particles[i].vx;
+				float tempVy = particles[i].vy;
+				particles[i].vx = particles[j].vx;
+				particles[i].vy = particles[j].vy;
+				particles[j].vx = tempVx;
+				particles[j].vy = tempVy;
+				*/
+				
+				particles[i].x = -100;
+				particles[i].y = -100;
+				particles[j].x = -100;
+				particles[j].x = -100;
+
+
+ 			}
+		}
+	}
 }
 
 
@@ -110,8 +150,8 @@ int main(){
                     Particle particle;
                     particle.x = mx;
                     particle.y = my;
-                    particle.vx = 0;
-                    particle.vy = 0;
+                    particle.vx = 0.5;
+                    particle.vy = 0.5;
                     particle.radius = 20;
 
                     particels[particle_count++] = particle;
@@ -125,7 +165,8 @@ int main(){
 			break;
 		}
 
-		particle.y += particle.vy;
+		addVelcoityToParticles(particels);
+		handleCollisions(particels);
 	}
 
 	return 0;
