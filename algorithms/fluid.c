@@ -15,15 +15,26 @@
 
 int g_particle_count = 0;
 
+
+typedef struct Color{
+	int r, g, b;
+} Color;
+
+
 typedef struct Particle{
 	float x, y;
  	float vx, vy; // velocity
 	int radius;
 	float mass;
+	Color color;
 } Particle;
 
 
-void draw_circle(SDL_Renderer* renderer, int cx, int cy, int radius) {
+void draw_circle(SDL_Renderer* renderer, int cx, int cy, int radius, Color color) {
+
+	SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, SDL_ALPHA_OPAQUE); 
+
+
     for (int x = -radius; x <= radius; x++) {
         for (int y = -radius; y <= radius; y++) {
             if (x*x + y*y <= radius*radius) { // inside circle
@@ -34,14 +45,16 @@ void draw_circle(SDL_Renderer* renderer, int cx, int cy, int radius) {
     }
 }
 
+int random_bettwen_0_255(){
+	return rand() % 101;
+}
+
 
 void draw_particles(SDL_Renderer* renderer,Particle particles[]){
 
-	//blue color
-	SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); 
    
     for(int i = 0; i < g_particle_count; ++i){
-        draw_circle(renderer, particles[i].x, particles[i].y, particles[i].radius);
+        draw_circle(renderer, particles[i].x, particles[i].y, particles[i].radius, particles[i].color);
     }
 }
 
@@ -64,18 +77,6 @@ void handle_collosions(Particle particles[]){
 			//check collosion bettwen the two particles
 			if(compute_distance(particles[i], particles[j]) <= particles[i].radius + particles[j].radius){
 
-				/*float tempVx = particles[i].vx;
-				float tempVy = particles[i].vy;
-				particles[i].vx = particles[j].vx;
-				particles[i].vy = particles[j].vy;
-				particles[j].vx = tempVx;
-				particles[j].vy = tempVy;
-				*/
-				
-				particles[i].x = -100;
-				particles[i].y = -100;
-				particles[j].x = -100;
-				particles[j].x = -100;
 
 				float dx = particles[j].x - particles[i].x;
 				float dy = particles[j].y - particles[i].y;
@@ -84,15 +85,25 @@ void handle_collosions(Particle particles[]){
 
 				float overlap = particles[i].radius + particles[j].radius - distance;
 
-				float nx = overlap / distance;
-				float ny = overlap / distance;
+				float nx = dx / distance;
+				float ny = dy / distance;
 
-				particles[i].x -= nx * (overlap / 2);
-				particles[i].y -= ny * (overlap / 2);
+				//moving them accordong to velcotiy. like when two objects hit each other
+				float rel_vel = ((particles[j].vx - particles[i].vx) * nx) + ((particles[j].vy - particles[i].vy) * ny);
 
-				particles[j].x += nx * (overlap/ 2);
-				particles[j].y += ny * (overlap / 2);
+				if (rel_vel < 0) {
+					// impulse strength (elastic, equal mass)
+					float impulse = -(1.0f + DAMPING) * rel_vel / 2.0f;
 
+					float ix = impulse * nx;
+					float iy = impulse * ny;
+
+					particles[i].vx -= ix;
+					particles[i].vy -= iy;
+
+					particles[j].vx += ix;
+					particles[j].vy += iy;
+				}
 
  			}
 		}
@@ -173,6 +184,10 @@ int main(){
                     particle.vx = 0.5;
                     particle.vy = 0.5;
                     particle.radius = 20;
+					particle.color.r = random_bettwen_0_255();
+					particle.color.g = random_bettwen_0_255();
+					particle.color.b = random_bettwen_0_255();
+
 
                     particels[g_particle_count++] = particle;
                 }
