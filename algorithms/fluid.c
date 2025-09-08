@@ -46,7 +46,7 @@ void draw_circle(SDL_Renderer* renderer, int cx, int cy, int radius, Color color
 }
 
 int random_bettwen_0_255(){
-	return rand() % 101;
+	return rand() % 256;
 }
 
 
@@ -72,27 +72,39 @@ float compute_distance(Particle p1, Particle p2){
 }
 
 void handle_collosions(Particle particles[]){
+
 	for(int i = 0; i < g_particle_count - 1; ++i){
 		for(int j= i + 1; j < g_particle_count; ++j){
 			//check collosion bettwen the two particles
-			if(compute_distance(particles[i], particles[j]) <= particles[i].radius + particles[j].radius){
-
+			if(compute_distance(particles[i], particles[j]) < particles[i].radius + particles[j].radius){
 
 				float dx = particles[j].x - particles[i].x;
 				float dy = particles[j].y - particles[i].y;
 
 				float distance = compute_distance(particles[i], particles[j]);
+				if (distance == 0) distance = 0.01f; // prevent division by zero
 
 				float overlap = particles[i].radius + particles[j].radius - distance;
 
 				float nx = dx / distance;
 				float ny = dy / distance;
 
-				//moving them accordong to velcotiy. like when two objects hit each other
-				float rel_vel = ((particles[j].vx - particles[i].vx) * nx) + ((particles[j].vy - particles[i].vy) * ny);
+				// correct the posostion of the two particles like push them away from each other
+				float correction = overlap / 2.0f;
+				particles[i].x -= correction * nx;
+				particles[i].y -= correction * ny;
 
+				particles[j].x += correction * nx;
+				particles[j].y += correction * ny;
+
+				//update the velocity of the two aprticles
+
+				//relative velocity of the two particles
+				float rel_vel = ((particles[j].vx - particles[i].vx) * nx) + 
+								((particles[j].vy - particles[i].vy) * ny);
+				
+				//change it only when the two particle going towarding each other
 				if (rel_vel < 0) {
-					// impulse strength (elastic, equal mass)
 					float impulse = -(1.0f + DAMPING) * rel_vel / 2.0f;
 
 					float ix = impulse * nx;
@@ -104,8 +116,7 @@ void handle_collosions(Particle particles[]){
 					particles[j].vx += ix;
 					particles[j].vy += iy;
 				}
-
- 			}
+			}
 		}
 	}
 
