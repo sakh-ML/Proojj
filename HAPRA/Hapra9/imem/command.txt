@@ -1,1 +1,0 @@
-python3 vhdl_script.py instructionmem.vhdl instructionmem_tb.vhdl

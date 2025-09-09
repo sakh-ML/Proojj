@@ -1,2 +1,0 @@
-python3 vhdl_script.py parallel_mult.vhdl parallel_mult_tb.vhdl 
- 

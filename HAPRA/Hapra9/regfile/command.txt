@@ -1,2 +1,0 @@
-python3 vhdl_script.py regfile.vhdl regfile_tb.vhdl
- 

@@ -1,2 +1,0 @@
-python3 vhdl_script.py DFlipFlop.vhdl sipo_register.vhdl robot.vhdl robot_tb.vhdl
- 

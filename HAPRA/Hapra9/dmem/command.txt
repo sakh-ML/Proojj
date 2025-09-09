@@ -1,1 +1,0 @@
-python3 vhdl_script.py datamem.vhdl datamem_tb.vhdl

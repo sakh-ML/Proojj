@@ -1,2 +1,0 @@
-python vhdl_script.py robot.vhdl robot_tb.vhdl
- 
